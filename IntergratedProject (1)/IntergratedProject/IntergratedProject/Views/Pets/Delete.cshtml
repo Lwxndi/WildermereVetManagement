@@ -1,0 +1,28 @@
+﻿@model IntergratedProject.Models.Pet
+
+@{
+    ViewData["Title"] = "Delete Pet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Confirm Delete</h2>
+<div class="alert alert-danger">
+    Are you sure you want to delete the pet <strong>@Model.PetName</strong>? This cannot be undone.
+</div>
+
+<dl class="row">
+    <dt class="col-sm-2">Species</dt>
+    <dd class="col-sm-10">@Model.Species?.Name</dd>
+
+    <dt class="col-sm-2">Breed</dt>
+    <dd class="col-sm-10">@Model.Breed?.Name</dd>
+
+    <dt class="col-sm-2">Age</dt>
+    <dd class="col-sm-10">@Model.AgeYears years</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="PetId" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a asp-action="Details" asp-route-id="@Model.PetId" class="btn btn-secondary">Cancel</a>
+</form>

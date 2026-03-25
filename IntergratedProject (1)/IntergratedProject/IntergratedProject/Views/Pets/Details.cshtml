@@ -1,0 +1,35 @@
+﻿@model IntergratedProject.Models.Pet
+
+@{
+    ViewData["Title"] = "Pet Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/css/pet-details.css" rel="stylesheet" />
+<div class="pet-details-container">
+    <div class="pet-card">
+        <img src="~/images/@(string.IsNullOrEmpty(Model.ImageFileName) ? "default_pet.jpg" : Model.ImageFileName)"
+             alt="@Model.PetName" class="pet-photo" />
+
+        <div class="pet-info">
+            <h2>@Model.PetName</h2>
+            <p><strong>Species:</strong> @Model.Species?.Name ?? "-"</p>
+            <p><strong>Breed:</strong> @Model.Breed?.Name ?? "-"</p>
+            <p><strong>Age:</strong> @Model.AgeYears years</p>
+            <p><strong>Gender:</strong> @Model.Gender ?? "-"</p>
+            <p><strong>Weight:</strong> @Model.WeightKg kg</p>
+            <p><strong>Height:</strong> @Model.HeightCm cm</p>
+            <p><strong>Color/Markings:</strong> @Model.ColorMarkings ?? "-"</p>
+            <p>
+                <strong>Primary Veterinarian:</strong>
+                @(Model.PrimaryVeterinarian != null ? $"Dr. {Model.PrimaryVeterinarian.Name} {Model.PrimaryVeterinarian.LastName}" : "-")
+            </p>
+        </div>
+
+        <div class="pet-actions">
+            <a asp-action="Edit" asp-route-id="@Model.PetId" class="btn btn-primary">Edit</a>
+            <a asp-action="Delete" asp-route-id="@Model.PetId" class="btn btn-danger">Delete</a>
+            <a asp-controller="PetOwners" asp-action="Dashboard" class="btn btn-secondary">Back</a>
+        </div>
+    </div>
+</div>
+

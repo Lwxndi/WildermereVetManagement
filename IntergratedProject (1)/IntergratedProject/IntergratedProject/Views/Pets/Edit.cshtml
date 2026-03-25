@@ -1,0 +1,109 @@
+﻿@model IntergratedProject.ViewModels.PetCreateViewModel
+
+@{
+    ViewData["Title"] = "Edit Pet";
+}
+
+<h1>Edit Pet Profile</h1>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="PetId" />
+
+    <div class="form-group">
+        <label asp-for="PetName"></label>
+        <input asp-for="PetName" class="form-control" />
+        <span asp-validation-for="PetName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SpeciesId">Species</label>
+        <select asp-for="SpeciesId" asp-items="Model.SpeciesList" class="form-control" id="SpeciesDropdown">
+            <option value="">-- Select Species --</option>
+        </select>
+        <span asp-validation-for="SpeciesId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BreedId">Breed</label>
+        <select asp-for="BreedId" asp-items="Model.BreedList" class="form-control" id="BreedDropdown">
+            <option value="">-- Select Breed --</option>
+        </select>
+        <span asp-validation-for="BreedId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gender"></label>
+        <select asp-for="Gender" class="form-control">
+            <option value="">-- Select Gender --</option>
+            <option value="Male" selected="@("Male" == Model.Gender)">Male</option>
+            <option value="Female" selected="@("Female" == Model.Gender)">Female</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AgeYears"></label>
+        <input asp-for="AgeYears" class="form-control" />
+        <span asp-validation-for="AgeYears" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="WeightKg"></label>
+        <input asp-for="WeightKg" class="form-control" />
+        <span asp-validation-for="WeightKg" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="HeightCm"></label>
+        <input asp-for="HeightCm" class="form-control" />
+        <span asp-validation-for="HeightCm" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ColorMarkings"></label>
+        <input asp-for="ColorMarkings" class="form-control" />
+        <span asp-validation-for="ColorMarkings" class="text-danger"></span>
+    </div>
+
+    @if (!string.IsNullOrEmpty(Model.CroppedImageData))
+    {
+        <div class="mb-3">
+            <label>Current Photo:</label><br />
+            <img src="@Model.CroppedImageData" style="max-width:200px; border-radius:8px;" />
+        </div>
+    }
+
+    <div class="form-group">
+        <label asp-for="ImageFile">Update Pet Photo</label>
+        <input asp-for="ImageFile" type="file" id="petImageInput" accept="image/*" class="form-control" />
+        <span asp-validation-for="ImageFile" class="text-danger"></span>
+    </div>
+
+    <div id="cropContainer" style="display:none; margin-top:15px;">
+        <h5>Adjust Photo</h5>
+        <div style="max-width:400px;">
+            <img id="cropImage" style="max-width:100%;" />
+        </div>
+        <button type="button" id="cropButton" class="btn btn-success mt-2">Crop & Apply</button>
+    </div>
+
+    <input type="hidden" asp-for="CroppedImageData" />
+
+    <div class="form-group">
+        <label asp-for="PrimaryVeterinarianId"></label>
+        <select asp-for="PrimaryVeterinarianId" class="form-control" asp-items="Model.Veterinarians">
+            <option value="">-- Select Primary Veterinarian --</option>
+        </select>
+        <span asp-validation-for="PrimaryVeterinarianId" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Save Changes</button>
+</form>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script src="~/js/pet-create-edit.js"></script>
+}

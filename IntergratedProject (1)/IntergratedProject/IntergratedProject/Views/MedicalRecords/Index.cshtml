@@ -1,0 +1,79 @@
+﻿@* @model List<IntergratedProject.ViewModels.MedicalRecordListViewModel>
+@{
+    ViewData["Title"] = "Medical Records";
+}
+
+<link rel="stylesheet" href="~/css/medical-records.css" />
+
+<div class="container mt-4">
+    <h2>Medical Records</h2>
+
+    <div class="mb-3 text-end">
+        <a href="@Url.Action("Create", "MedicalRecords")" class="btn btn-success">Add New Record</a>
+    </div>
+
+    @if (!Model.Any())
+    {
+        <p class="text-muted">No medical records found.</p>
+    }
+    else
+    {
+        <table class="table table-hover table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Pet</th>
+                    <th>Owner</th>
+                    <th>Diagnosis</th>
+                    <th>Priority</th>
+                    <th>Signed</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var record in Model)
+                {
+                    <tr>
+                        <td>@record.PetName</td>
+                        <td>@record.VeterinarianName</td>
+                        <td>@record.DiagnosisSummary</td>
+                        <td>@record.Priority</td>
+                        <td>
+                            @if (record.IsSigned)
+                            {
+                                <span class="badge bg-success">Yes</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-warning text-dark">No</span>
+                            }
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Details", "MedicalRecords", new { id = record.Id })" class="btn btn-sm btn-primary">View</a>
+
+                            @if (User.IsInRole("Vet") || User.IsInRole("Admin"))
+                            {
+                                <a href="@Url.Action("Edit", "MedicalRecords", new { id = record.Id })" class="btn btn-sm btn-warning">Edit</a>
+
+                                @if (!record.IsSigned)
+                                {
+                                    <form method="post" action="@Url.Action("Sign", "MedicalRecords", new { id = record.Id })" class="d-inline">
+                                        <input type="hidden" name="__RequestVerificationToken" value="@Antiforgery.GetTokens(HttpContext).RequestToken" />
+                                        <button type="submit" class="btn btn-sm btn-success">Sign</button>
+                                    </form>
+                                }
+
+                                <a href="@Url.Action("UploadPrescription", "MedicalRecords", new { id = record.Id })" class="btn btn-sm btn-info">Upload Prescription</a>
+                            }
+
+                            @if (User.IsInRole("PetOwner"))
+                            {
+                                <a href="@Url.Action("DownloadPrescription", "MedicalRecords", new { fileId = record.Id })" class="btn btn-sm btn-secondary">Download Prescription</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+ *@

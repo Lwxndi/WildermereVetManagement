@@ -1,0 +1,108 @@
+/*html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+  color: var(--bs-secondary-color);
+  text-align: end;
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+  text-align: start;
+}*/
+/* Color of the links and icons BEFORE scroll */
+/*.navbar-before-scroll .nav-link,
+.navbar-before-scroll .navbar-toggler-icon,
+.navbar-before-scroll .navbar-brand {*/
+    /* For Admin (dark background), links will be white */
+    /*color: #fff;
+}*/
+
+/* This is needed to override Bootstrap's color for `bg-info` and `bg-light` */
+/*.navbar-before-scroll.bg-info .nav-link,
+.navbar-before-scroll.bg-info .navbar-toggler-icon,
+.navbar-before-scroll.bg-light .nav-link,
+.navbar-before-scroll.bg-light .navbar-toggler-icon {
+    color: #4f4f4f;*/ /* Links will be dark for light backgrounds */
+/*}*/
+
+/* This makes the navbar transparent initially */
+/*.navbar-before-scroll {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}*/
+
+/* Color of the links and icons AFTER scroll */
+/*.navbar-after-scroll .nav-link,
+.navbar-after-scroll .navbar-toggler-icon,
+.navbar-after-scroll .navbar-brand {
+    color: #4f4f4f;
+}*/
+
+/* Color and shadow of the navbar AFTER scroll */
+/*.navbar-after-scroll {
+    background-color: #fff !important;
+    border-bottom: 1px solid rgba(0,0,0,.1) !important;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15) !important;
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+}*/
+
+/* Transition to the initial state */
+/*.navbar-before-scroll {
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+}*/
+
+/* An optional height of the navbar AFTER scroll */
+/*.navbar.navbar-before-scroll.navbar-after-scroll {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}*/
+
+/* Navbar on mobile always has a background and dark links for readability */
+/*@media (max-width: 991.98px) {
+    #main-navbar {
+        background-color: #fff !important;
+    }
+
+    .nav-link,
+    .navbar-toggler-icon {
+        color: #4f4f4f !important;
+    }
+}*/
+
+.navbar .nav-link {
+    color: #f8f9fa !important;
+    font-weight: 500;
+}
+
+    .navbar .nav-link:hover {
+        color: #FFD700 !important;
+    }
+
+.badge {
+    font-size: 0.7rem;
+}
+
+.navbar .dropdown-menu {
+    font-size: 0.9rem;
+}

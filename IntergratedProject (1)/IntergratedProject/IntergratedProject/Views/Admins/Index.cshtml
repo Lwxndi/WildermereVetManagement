@@ -1,0 +1,44 @@
+﻿@model List<IntergratedProject.ViewModels.UserViewModel>
+
+@{
+    ViewData["Title"] = "User Management";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var roles = new List<string> { "All", "Admin", "Veterinarian", "PetOwner" };
+}
+
+<h1>User Management</h1>
+
+<form method="get" class="form-inline mb-3">
+    <input type="text" name="searchTerm" placeholder="Search by name or email" value="@ViewBag.CurrentSearch" class="form-control mr-2" />
+
+    <select name="roleFilter" class="form-control mr-2">
+        @foreach (var role in roles)
+        {
+            <option value="@role" selected="@(ViewBag.CurrentRole == role ? "selected" : null)">@role</option>
+
+        }
+    </select>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.FullName</td>
+                <td>@user.Email</td>
+                <td>@user.Role</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,35 @@
+﻿@model IntergratedProject.ViewModels.PaymentCheckoutViewModel
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewData["Title"] = "Checkout";
+}
+
+<h2>Checkout</h2>
+
+<div class="card p-3 mb-3">
+    <h4>Appointment Details</h4>
+    <p><strong>Pet:</strong> @Model.PetName</p>
+    <p><strong>Appointment Type:</strong> @Model.AppointmentType</p>
+    <p><strong>Date:</strong> @Model.Date.ToShortDateString()</p>
+    <p><strong>Time:</strong> @Model.Time</p>
+    <p><strong>Amount:</strong> R@Model.Amount</p>
+</div>
+
+<form asp-action="ProcessPayment" method="post">
+    <input type="hidden" asp-for="AppointmentId" />
+
+    <div class="mb-3">
+        <label asp-for="SelectedMethod" class="form-label">Payment Method</label>
+        <select asp-for="SelectedMethod" class="form-control" asp-items="Html.GetEnumSelectList<IntergratedProject.Models.PaymentMethods>()">
+            <option value="">-- Select Payment Method --</option>
+        </select>
+        <span asp-validation-for="SelectedMethod" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Pay R@Model.Amount</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

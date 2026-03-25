@@ -1,0 +1,205 @@
+﻿@model IntergratedProject.ViewModels.AppointmentCreateViewModel
+
+@{
+    ViewData["Title"] = "Reschedule Appointment";
+}
+
+<h2>Reschedule Appointment</h2>
+
+<form asp-action="Reschedule" method="post">
+    <input type="hidden" asp-for="AppointmentId" />
+
+    <!-- Appointment Type -->
+    <div class="mb-3">
+        <label asp-for="AppointmentTypeId" class="form-label"></label>
+        <select asp-for="AppointmentTypeId" class="form-select" asp-items="Model.AppointmentTypes">
+            <option value="">-- Select Appointment Type --</option>
+        </select>
+        <span asp-validation-for="AppointmentTypeId" class="text-danger"></span>
+    </div>
+
+    <!-- Price -->
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label"></label>
+        <input asp-for="Price" class="form-control" readonly id="Price" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <!-- Veterinarian -->
+    <div class="mb-3">
+        <label asp-for="VeterinarianId" class="form-label"></label>
+        <select asp-for="VeterinarianId" class="form-select" asp-items="Model.Veterinarians">
+            <option value="">-- Select Veterinarian --</option>
+        </select>
+        <span asp-validation-for="VeterinarianId" class="text-danger"></span>
+    </div>
+
+    <!-- Pet -->
+    <div class="mb-3">
+        <label asp-for="PetId" class="form-label"></label>
+        <select asp-for="PetId" class="form-select" asp-items="Model.Pets">
+            <option value="">-- Select Pet --</option>
+        </select>
+        <span asp-validation-for="PetId" class="text-danger"></span>
+    </div>
+
+    <!-- Date -->
+    <div class="mb-3">
+        <label asp-for="AppointmentDateTime" class="form-label">Date</label>
+        <input type="date" id="AppointmentDate" class="form-control" value="@Model.AppointmentDateTime.ToString("yyyy-MM-dd")" />
+    </div>
+
+    <!-- Time -->
+    <div class="row">
+        <div class="col">
+            <label class="form-label">Hour</label>
+            <select id="AppointmentHour" class="form-select">
+                @for (int h = 0; h < 24; h++)
+                {
+                    string selected = (h == Model.AppointmentDateTime.Hour) ? "selected" : "";
+                    @:<option value="@h" @selected>@h.ToString("D2")</option>
+                }
+            </select>
+        </div>
+        <div class="col">
+            <label class="form-label">Minute</label>
+            <select id="AppointmentMinute" class="form-select">
+                @for (int m = 0; m < 60; m += 5)
+                {
+                    string selected = (m == Model.AppointmentDateTime.Minute) ? "selected" : "";
+                    @:<option value="@m" @selected>@m.ToString("D2")</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <!-- Notes -->
+    <div class="mb-3">
+        <label asp-for="AdditionalNotes" class="form-label"></label>
+        <textarea asp-for="AdditionalNotes" class="form-control"></textarea>
+        <span asp-validation-for="AdditionalNotes" class="text-danger"></span>
+    </div>
+
+    <!-- Hidden full datetime -->
+    <input type="hidden" id="AppointmentDateTime" name="AppointmentDateTime" value="@Model.AppointmentDateTime.ToString("yyyy-MM-ddTHH:mm")" />
+
+    <!-- End Time -->
+    <div class="mb-3">
+        <label class="form-label">Appointment End Time</label>
+        <input type="text" class="form-control" id="EndTime" readonly />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Reschedule Appointment</button>
+</form>
+
+<!-- Error Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">Error</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="errorModalBody"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/appointment.js"></script>
+
+    <script>
+        function updateHiddenDateTime() {
+            var date = $("#AppointmentDate").val();
+            var hour = $("#AppointmentHour").val();
+            var minute = $("#AppointmentMinute").val();
+            if (date && hour !== null && minute !== null) {
+                $("#AppointmentDateTime").val(date + "T" + hour.padStart(2, '0') + ":" + minute.padStart(2, '0'));
+            }
+        }
+
+        $("#AppointmentDate, #AppointmentHour, #AppointmentMinute").on("change", updateHiddenDateTime);
+        $(document).ready(updateHiddenDateTime);
+
+        function getCombinedDateTime() {
+            var date = $("#AppointmentDate").val();
+            var hour = $("#AppointmentHour").val();
+            var minute = $("#AppointmentMinute").val();
+
+            if (date && hour !== null && minute !== null) {
+                return new Date(date + "T" + hour.padStart(2, '0') + ":" + minute.padStart(2, '0'));
+            }
+            return null;
+        }
+
+        function updateEndTime(duration) {
+            var appointmentDateTime = getCombinedDateTime();
+
+            if (appointmentDateTime && duration) {
+                var end = new Date(appointmentDateTime);
+                end.setMinutes(end.getMinutes() + duration);
+
+                var hours = end.getHours().toString().padStart(2, '0');
+                var minutes = end.getMinutes().toString().padStart(2, '0');
+                $("#EndTime").val(hours + ':' + minutes);
+            } else {
+                $("#EndTime").val('');
+            }
+        }
+
+        $("#AppointmentTypeId").change(function () {
+            var appointmentTypeId = $(this).val();
+
+            if (appointmentTypeId) {
+                $.ajax({
+                    url: '/Appointments/GetPrice',
+                    type: 'GET',
+                    data: { appointmentTypeId: appointmentTypeId },
+                    success: function (data) {
+                        $("#Price").val(data.price);
+                        updateEndTime(data.durationMinutes);
+                    },
+                    error: function () {
+                        $("#Price").val('');
+                        $("#EndTime").val('');
+                        showError("Could not fetch price.");
+                    }
+                });
+            } else {
+                $("#Price").val('');
+                $("#EndTime").val('');
+            }
+        });
+
+        $("#AppointmentDate, #AppointmentHour, #AppointmentMinute").change(function () {
+            var duration = parseInt($("#AppointmentTypeId option:selected").data("duration")) || 0;
+            updateEndTime(duration);
+        });
+
+        $("#AppointmentTypeId").trigger('change');
+
+        // === POPUP ERROR HANDLING (same as Book Appointment) ===
+        $(function () {
+            var errors = [];
+            $(".validation-summary-errors li").each(function () {
+                errors.push($(this).text());
+            });
+
+            if (errors.length > 0) {
+                $("#errorModalBody").html(errors.join("<br/>"));
+                var modal = new bootstrap.Modal(document.getElementById("errorModal"));
+                modal.show();
+            }
+        });
+
+        function showError(message) {
+            $("#errorModalBody").text(message);
+            var modal = new bootstrap.Modal(document.getElementById("errorModal"));
+            modal.show();
+        }
+    </script>
+}

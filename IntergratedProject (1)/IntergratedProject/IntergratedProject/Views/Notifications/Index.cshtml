@@ -1,0 +1,104 @@
+﻿@* @model IEnumerable<IntergratedProject.Models.Notification>
+
+@{
+    ViewData["Title"] = "Notifications";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="mb-4">Notifications</h2>
+
+<form method="get" class="mb-3">
+    <div class="d-flex gap-3">
+        <select name="filter" class="form-select w-auto">
+            <option value="">All</option>
+            <option value="unread">Unread</option>
+            <option value="read">Read</option>
+        </select>
+        <button type="submit" class="btn btn-outline-primary">Filter</button>
+    </div>
+</form>
+
+@if (Model.Any())
+{
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Message</th>
+                <th>Sent At</th>
+                <th>Status</th>
+                <th>Linked Data</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var note in Model)
+            {
+                <tr>
+                    <td>@note.Message</td>
+                    <td>@note.SentAt.ToString("MMM dd, yyyy HH:mm")</td>
+                    <td>
+                        @if (note.IsRead)
+                        {
+                            <span class="badge bg-secondary">Read</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-warning text-dark">Unread</span>
+                        }
+                    </td>
+                    <td>
+                        @if (note.AppointmentId != null)
+                        {
+                            <a href="/nts/Details/@note.AppointmentIdView Appointment</a>
+                        }
+                        else if (note.MedicalRecordId != null)
+                        {
+                            /MedicalRecords/Details/@note.MedicalRecordIdView Record</a>
+                        }
+                        else if (note.InvoiceId != null)
+                        {
+                            /Invoices/Details/@note.InvoiceIdView Invoice</a>
+                        }
+                        else
+                        {
+                            <span class="text-muted">—</span>
+                        }
+                    </td>
+                    <td class="d-flex gap-2">
+                        @if (!note.IsRead)
+                        {
+                            MarkAsRead
+                                <input type="hidden" name="id" value="@note.NotificationId" />
+                                <button type="submit" class="btn btn-sm btn-success">Mark as Read</button>
+                            </form>
+                        }
+                        DeleteConfirmed
+                            <input type="hidden" name="id" value="@note.NotificationId" />
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-info text-center">
+        No notifications found.
+    </div>
+}
+
+@if ((int)ViewData["TotalPages"] > 1)
+{
+    <nav class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= (int)ViewData["TotalPages"]; i++)
+            {
+                <li class="page-item @(i == (int)ViewData["CurrentPage"] ? "active" : "")">
+                    ?page=@i@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+} *@

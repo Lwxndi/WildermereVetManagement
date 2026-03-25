@@ -1,0 +1,393 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\IntergratedProject.bundle.scp.css",
+      "PackagePath": "staticwebassets\\IntergratedProject.57ebw9qhwm.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\css\\Homepage.css",
+      "PackagePath": "staticwebassets\\css\\Homepage.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\css\\Registration.css",
+      "PackagePath": "staticwebassets\\css\\Registration.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\css\\dashboard.css",
+      "PackagePath": "staticwebassets\\css\\dashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\126efe8a-12fc-4cde-87a0-cd783ad7d8fa_birdy.jfif",
+      "PackagePath": "staticwebassets\\images\\126efe8a-12fc-4cde-87a0-cd783ad7d8fa_birdy.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\160e964f-3b54-4a7f-b90e-13f54f52b919_LEGEND1.jpeg",
+      "PackagePath": "staticwebassets\\images\\160e964f-3b54-4a7f-b90e-13f54f52b919_LEGEND1.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\16d0aee8-585b-4cd0-8e04-cf14cac0a9a4_Cater.jfif",
+      "PackagePath": "staticwebassets\\images\\16d0aee8-585b-4cd0-8e04-cf14cac0a9a4_Cater.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\2a3037cb-e74f-4c8c-b48d-7df8a1adb2c4_MAGWAZA.jfif",
+      "PackagePath": "staticwebassets\\images\\2a3037cb-e74f-4c8c-b48d-7df8a1adb2c4_MAGWAZA.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\43fcbdda-2dad-47a3-90bf-65796b4c0368_Cater.jfif",
+      "PackagePath": "staticwebassets\\images\\43fcbdda-2dad-47a3-90bf-65796b4c0368_Cater.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\4d947621-a9e3-4022-b2f6-9cf1019ed348_Dangerous.jfif",
+      "PackagePath": "staticwebassets\\images\\4d947621-a9e3-4022-b2f6-9cf1019ed348_Dangerous.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\761a0392-78c2-4b2a-947a-20ba6edf6f78_MAGWAZA.jfif",
+      "PackagePath": "staticwebassets\\images\\761a0392-78c2-4b2a-947a-20ba6edf6f78_MAGWAZA.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\7896a95a-d7eb-4f16-847c-a3a88be3e463_MAGWAZA.jfif",
+      "PackagePath": "staticwebassets\\images\\7896a95a-d7eb-4f16-847c-a3a88be3e463_MAGWAZA.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\7fb0409a-1558-4bf4-9270-d6d6b0fd6bac_STEVOVO.jfif",
+      "PackagePath": "staticwebassets\\images\\7fb0409a-1558-4bf4-9270-d6d6b0fd6bac_STEVOVO.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\8b055159-0c51-4a19-ba9a-362b8e80d243_Cater.jfif",
+      "PackagePath": "staticwebassets\\images\\8b055159-0c51-4a19-ba9a-362b8e80d243_Cater.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\Hampster baby.jpg",
+      "PackagePath": "staticwebassets\\images\\Hampster baby.jpg"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\Hamster2.jpeg",
+      "PackagePath": "staticwebassets\\images\\Hamster2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\LEGEND.jpeg",
+      "PackagePath": "staticwebassets\\images\\LEGEND.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\a6aada0a-f3a2-4337-8cae-38b0641bf910_MAGWAZA.jfif",
+      "PackagePath": "staticwebassets\\images\\a6aada0a-f3a2-4337-8cae-38b0641bf910_MAGWAZA.jfif"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\cat2.jpeg",
+      "PackagePath": "staticwebassets\\images\\cat2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\dog3.jpeg",
+      "PackagePath": "staticwebassets\\images\\dog3.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\ef40c8a4-e423-4cde-b9db-c99cde28c638_bird1.webp",
+      "PackagePath": "staticwebassets\\images\\ef40c8a4-e423-4cde-b9db-c99cde28c638_bird1.webp"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\perry.webp",
+      "PackagePath": "staticwebassets\\images\\perry.webp"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\pocket 2.jpeg",
+      "PackagePath": "staticwebassets\\images\\pocket 2.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\images\\pocket1.webp",
+      "PackagePath": "staticwebassets\\images\\pocket1.webp"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\js\\appointment.js",
+      "PackagePath": "staticwebassets\\js\\appointment.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\js\\appointments-filter.js",
+      "PackagePath": "staticwebassets\\js\\appointments-filter.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\js\\homepage.js",
+      "PackagePath": "staticwebassets\\js\\homepage.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\js\\pet-create-edit.js",
+      "PackagePath": "staticwebassets\\js\\pet-create-edit.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\dist\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery\\dist\\jquery.slim.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.js"
+    },
+    {
+      "Id": "C:\\Users\\22310593\\Downloads\\IntergratedProject\\IntergratedProject\\wwwroot\\lib\\jquery\\dist\\jquery.slim.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.IntergratedProject.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.IntergratedProject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.IntergratedProject.props",
+      "PackagePath": "build\\IntergratedProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.IntergratedProject.props",
+      "PackagePath": "buildMultiTargeting\\IntergratedProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.IntergratedProject.props",
+      "PackagePath": "buildTransitive\\IntergratedProject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

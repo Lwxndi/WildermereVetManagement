@@ -1,0 +1,255 @@
+﻿/*body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('/images/hamster2.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+}*/
+
+/* Transparent overlay for better text visibility */
+/*.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);*/ /* Adjust transparency as needed */
+    /*z-index: 0;
+}*/
+
+/* Only center the login form container */
+/*.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;*/ /* Puts it above the overlay */
+/*}*/
+
+/* Main Container */
+/*.main-container {
+    display: flex;
+    width: 900px;
+    max-width: 95%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}*/
+
+/* Panels */
+/*.content-panel {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}*/
+
+/* Left Side */
+/*.left-panel h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.left-panel p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+}*/
+
+/* Right Panel (form) */
+/*.right-panel {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+}*/
+
+/* Form Styling */
+/*.login-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f4f4f4;
+}
+
+    .login-form input:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+.sign-in-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .sign-in-button:hover {
+        background-color: #0056b3;
+    }*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('/images/hamster2.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Transparent overlay for better text visibility */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Adjust transparency as needed */
+    z-index: 0;
+}
+
+/* Only center the login form container */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1; 
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    width: 900px;
+    max-width: 95%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+/* Panels */
+.content-panel {
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Left Side */
+.left-panel h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.left-panel p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 20px;
+}
+
+/* Right Panel (form) */
+.right-panel {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+}
+
+/* Form Styling */
+.login-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #f4f4f4;
+}
+
+    .login-form input:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+/* === Buttons Side-by-Side === */
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+/* Sign In Button */
+.sign-in-button {
+    flex: 1;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+    .sign-in-button:hover {
+        background-color: #0056b3;
+    }
+
+/* Register Button (styled link) */
+.register-button {
+    flex: 1;
+    padding: 15px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+    .register-button:hover {
+        background-color: #5a6268;
+    }

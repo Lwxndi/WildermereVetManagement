@@ -1,0 +1,160 @@
+﻿HTML (Create.cshtml View) CSS (site.css)
+```html
+@model IntergratedProject.Models.PetOwner
+
+Export to Sheets
+@ {
+    ViewData ["Title"] = "Create Your Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="registration-container" >
+<div class="registration-card" >
+<div class="card-header-logo" >
+<h2 > Wildemere Vet</h2 >
+<p > Professional Veterinary Care</p >
+</div >
+<h5 class="text-center mb-4" > Create Your Account</h5 >
+
+<form asp-action="Create" method="post" >
+<div asp-validation-summary="All" class="text-danger mb-3" > </div >
+
+<div class="form-group mb-3" >
+<label asp-for="Name" > Full Name</label >
+<input asp-for="Name" class="form-control" placeholder="Enter your full name" / >
+<span asp-validation-for="Name" class="text-danger" > </span >
+</div >
+
+<div class="form-group mb-3" >
+<label asp-for="Email" > Email</label >
+<input asp-for="Email" class="form-control" placeholder="Enter your email" / >
+<span asp-validation-for="Email" class="text-danger" > </span >
+</div >
+
+<div class="form-group mb-3" >
+<label asp-for="PhoneNumber" > Phone Number</label >
+<input asp-for="PhoneNumber" class="form-control" placeholder="+27 123 456 789" / >
+<span asp-validation-for="PhoneNumber" class="text-danger" > </span >
+</div >
+
+<div class="form-group mb-3" >
+<label > Account Type</label >
+<select class="form-control" >
+<option > Pet Owner</option >
+<option > Veterinarian</option >
+</select >
+</div >
+
+<div class="form-group mb-3" >
+<label asp-for="Password" > Password</label >
+<input asp-for="Password" type="password" class="form-control" placeholder="Enter your password" / >
+<span asp-validation-for="Password" class="text-danger" > </span >
+</div >
+
+<div class="form-group mb-4" >
+<label asp-for="ConfirmPassword" > Confirm Password</label >
+<input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm your password" / >
+<span asp-validation-for="ConfirmPassword" class="text-danger" > </span >
+</div >
+
+<div class="d-grid gap-2" >
+<input type="submit" value="Create Account" class="btn btn-dark-blue btn-lg" / >
+</div >
+</form >
+
+<div class="link-container" >
+<a href="#" > &larr; Back to Home</a >
+<a href="#" > Login here</a >
+</div >
+</div >
+</div >
+
+@section Scripts {
+    @ {
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+|css
+/* Styles for the registration page /
+.registration-container {
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: calc(100vh - 120px); / Adjust based on your header/footer height */
+padding: 20px;
+}
+
+.registration-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.card-header-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+    .card-header-logo h2 {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #2e4d9c; /* A deep blue color for the brand */
+        margin-bottom: 5px;
+    }
+
+    .card-header-logo p {
+        font-size: 1em;
+        color: #6c757d;
+    }
+
+.form-group label {
+    font-weight: 500;
+    color: #495057;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+    .form-control::placeholder {
+        color: #adb5bd;
+    }
+
+    .form-control:focus {
+        border-color: #2e4d9c;
+        box-shadow: 0 0 0 0.2rem rgba(46, 77, 156, 0.25);
+    }
+
+.btn-dark-blue {
+    background-color: #2e4d9c;
+    border-color: #2e4d9c;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-dark-blue:hover {
+        background-color: #243d7e;
+        border-color: #243d7e;
+    }
+
+.link-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+    .link-container a {
+        color: #6c757d;
+        text-decoration: none;
+    }
+
+        .link-container a:hover {
+            text-decoration: underline;
+        }

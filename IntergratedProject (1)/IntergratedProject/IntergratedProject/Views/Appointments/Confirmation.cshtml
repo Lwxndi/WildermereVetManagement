@@ -1,0 +1,61 @@
+﻿@model IntergratedProject.ViewModels.PaymentConfirmationViewModel
+@{
+    ViewData["Title"] = "Payment Confirmation";
+}
+
+<h2>Payment Confirmation</h2>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Payment Details</h5>
+        <dl class="row">
+            <dt class="col-sm-3">Amount</dt>
+            <dd class="col-sm-9">@Model.Amount.ToString("C") (@Model.Currency)</dd>
+
+            <dt class="col-sm-3">Payment Method</dt>
+            <dd class="col-sm-9">@Model.PaymentMethod</dd>
+
+            <dt class="col-sm-3">Status</dt>
+            <dd class="col-sm-9">
+                @Model.PaymentStatus
+                @if (Model.PaymentStatus.ToLower() == "pending")
+                {
+                    <span class="text-warning"> — Please complete payment at the clinic.</span>
+                }
+            </dd>
+
+            <dt class="col-sm-3">Transaction Reference</dt>
+            <dd class="col-sm-9">@Model.TransactionReference</dd>
+
+            <dt class="col-sm-3">Paid At</dt>
+            <dd class="col-sm-9">@Model.PaidAt?.ToString("f") ?? "-" </dd>
+
+            <dt class="col-sm-3">Notes</dt>
+            <dd class="col-sm-9">@Model.Notes ?? "-" </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Appointment Info</h5>
+        <dl class="row">
+            <dt class="col-sm-3">Pet</dt>
+            <dd class="col-sm-9">@Model.PetName</dd>
+
+            <dt class="col-sm-3">Vet</dt>
+            <dd class="col-sm-9">@Model.VetName</dd>
+
+            <dt class="col-sm-3">Date & Time</dt>
+            <dd class="col-sm-9">@Model.AppointmentDateTime.ToString("f")</dd>
+
+            <dt class="col-sm-3">Type</dt>
+            <dd class="col-sm-9">@Model.AppointmentType</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="mb-3">
+    <a asp-controller="Appointments" asp-action="Index" class="btn btn-primary">Back to Dashboard</a>
+    <a asp-controller="Payments" asp-action="Receipt" asp-route-id="@Model.PaymentId" class="btn btn-secondary">Download Receipt</a>
+</div>

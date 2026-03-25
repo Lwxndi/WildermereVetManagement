@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+<div class="p-5 bg-light rounded shadow-sm">
+    <h2 class="text-primary">Admin Dashboard</h2>
+    <p>Welcome, @HttpContextAccessor.HttpContext?.Session.GetString("Email")</p>
+
+    <div class="alert alert-info">System Health: All services running.</div>
+
+    <h4 class="mt-4">Tasks</h4>
+    <ul class="list-group">
+        <li class="list-group-item">Review new veterinarian signups</li>
+        <li class="list-group-item">Moderate pet owner activity</li>
+        <li class="list-group-item">Check recent login logs</li>
+    </ul>
+
+    <h4 class="mt-5">System Overview</h4>
+    <canvas id="adminChart" width="400" height="200"></canvas>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('adminChart').getContext('2d');
+        const adminChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Pet Owners', 'Veterinarians', 'Admins'],
+                datasets: [{
+                    label: 'User Counts',
+                    data: [25, 10, 2],
+                    backgroundColor: ['#0d6efd', '#198754', '#6c757d']
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+}

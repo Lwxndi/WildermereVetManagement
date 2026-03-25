@@ -1,0 +1,74 @@
+﻿@model IntergratedProject.ViewModels.MedicalRecordCreateViewModel
+
+@{
+    ViewData["Title"] = "Create Medical Record";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create Medical Record</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="PetId" class="control-label"></label>
+                <select asp-for="PetId" class="form-control" asp-items="Model.PetOptions"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="VeterinarianId" class="control-label"></label>
+                <select asp-for="VeterinarianId" class="form-control" asp-items="Model.VeterinarianOptions"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AppointmentId" class="control-label"></label>
+                <select asp-for="AppointmentId" class="form-control" asp-items="Model.AppointmentOptions">
+                    <option value="">-- Select Appointment (Optional) --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Diagnosis" class="control-label"></label>
+                <input asp-for="Diagnosis" class="form-control" />
+                <span asp-validation-for="Diagnosis" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Treatment" class="control-label"></label>
+                <input asp-for="Treatment" class="form-control" />
+                <span asp-validation-for="Treatment" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Notes" class="control-label"></label>
+                <textarea asp-for="Notes" class="form-control"></textarea>
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Priority" class="control-label"></label>
+                <select asp-for="Priority" class="form-control">
+                    @foreach (var value in Enum.GetValues(typeof(IntergratedProject.Models.MedicalRecord)))
+                    {
+                        <option value="@value">@value</option>
+                    }
+                </select>
+                <span asp-validation-for="Priority" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Upload Files (Vet/Admin only)</label>
+                <input type="file" asp-for="UploadedFiles" multiple class="form-control" />
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>

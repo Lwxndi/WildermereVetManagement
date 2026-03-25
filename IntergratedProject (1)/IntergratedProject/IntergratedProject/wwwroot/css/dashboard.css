@@ -1,0 +1,51 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('/images/hamster2.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Optional overlay for better readability over hamster image */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.3); /* adjust transparency */
+    z-index: 0;
+}
+
+.glass-container {
+    background-color: rgba(255, 255, 255, 0.95); /* bright panel like login */
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+    /* Section titles inside the container */
+    .glass-container h3 {
+        color: #333;
+        font-weight: bold;
+    }
+
+    /* Buttons inside glass-container */
+    .glass-container .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .glass-container .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    /* Optional: list text */
+    .glass-container p,
+    .glass-container span,
+    .glass-container li {
+        color: #333;
+    }

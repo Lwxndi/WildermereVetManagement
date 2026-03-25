@@ -1,0 +1,169 @@
+﻿@model IntergratedProject.ViewModels.VeterinarianDashboardViewModel
+
+<div class="vet-dashboard container mt-4">
+
+    <!-- Header / Stats Widgets -->
+    <div class="dashboard-widgets row mb-4">
+        <div class="col-md-3 widget-card">
+            <h6>Upcoming Appointments</h6>
+            <p>@Model.UpcomingAppointments.Count</p>
+        </div>
+        <div class="col-md-3 widget-card">
+            <h6>Completed Appointments</h6>
+            <p>@Model.CompletedAppointments.Count</p>
+        </div>
+        <div class="col-md-3 widget-card">
+            <h6>Unread Notifications</h6>
+            <p>@Model.UnreadNotificationsCount</p>
+        </div>
+        <div class="col-md-3 widget-card">
+            <h6>Total Pets Treated</h6>
+            <p>@Model.RecentMedicalRecords?.Count ?? 0</p>
+        </div>
+    </div>
+
+    <!-- Charts Section -->
+    <div class="charts-section row mb-4">
+        <div class="col-md-6 chart-card">
+            <h6>Appointments per Vet</h6>
+            <canvas id="appointmentsChart"></canvas>
+        </div>
+        <div class="col-md-6 chart-card">
+            <h6>Most Common Treatments</h6>
+            <canvas id="treatmentsChart"></canvas>
+        </div>
+    </div>
+
+    <div class="charts-section row mb-4">
+        <div class="col-md-12 chart-card">
+            <h6>Prescription Trends</h6>
+            <canvas id="prescriptionChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Upcoming Appointments -->
+    <div class="appointments-section mb-5">
+        <h5>Upcoming Appointments</h5>
+        <div class="row">
+            @if (Model.UpcomingAppointments.Any())
+            {
+                foreach (var appt in Model.UpcomingAppointments.Take(5))
+                {
+                    <div class="col-md-4">
+                        <div class="card appointment-card mb-3 shadow-sm">
+                            <div class="card-body">
+                                <h6 class="card-title">@appt.Pet.PetName</h6>
+                                <p class="card-subtitle mb-1">Owner: @appt.Pet.PetOwner.Name</p>
+                                <p class="card-text">Date: @appt.Date.ToString("MMM dd, HH:mm")</p>
+                                <p class="card-text">Status: <span class="status-badge">@appt.Status</span></p>
+                                <a href="@Url.Action("Details", "Appointments", new { id = appt.AppointmentId })" class="btn btn-sm btn-primary">
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p class="text-muted">No upcoming appointments</p>
+            }
+        </div>
+        <div class="text-end">
+            <a href="@Url.Action("Index", "Appointments")" class="btn btn-outline-primary">View All Appointments</a>
+        </div>
+    </div>
+
+    <!-- Recent Medical Records -->
+    <div class="medical-records-section mb-5">
+        <h5>Recent Medical Records</h5>
+        @if (Model.RecentMedicalRecords != null && Model.RecentMedicalRecords.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Pet</th>
+                            <th>Owner</th>
+                            <th>Diagnosis</th>
+                            <th>Priority</th>
+                            <th>Date Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var record in Model.RecentMedicalRecords)
+                        {
+                            <tr>
+                                <td>@record.PetName</td>
+                                <td>@record.OwnerName</td>
+                                <td>@record.Diagnosis</td>
+                                <td>@record.Priority</td>
+                                <td>@record.CreatedAt.ToString("MMM dd, yyyy")</td>
+                                <td>
+                                    <a href="@Url.Action("Details", "MedicalRecords", new { id = record.Id })" class="btn btn-sm btn-primary">View</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <p class="text-muted">No medical records found</p>
+        }
+    </div>
+
+    <!-- Notifications Panel -->
+    <div class="notifications-section mb-5">
+        <h5>Recent Notifications</h5>
+        @* We'll fetch notifications dynamically here or via model *@
+        <ul class="list-group">
+            @* Placeholder items *@
+            <li class="list-group-item">Notification 1</li>
+            <li class="list-group-item">Notification 2</li>
+        </ul>
+        <div class="text-end mt-2">
+            <a href="@Url.Action("Notifications", "MedicalRecords")" class="btn btn-outline-secondary btn-sm">View All</a>
+        </div>
+    </div>
+
+    <!-- Pet Search -->
+    <div class="pet-search-section mb-5">
+        <h5>Search Pets</h5>
+        <form method="get" action="@Url.Action("SearchPets", "Veterinarians")">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="searchTerm" placeholder="Enter pet or owner name" value="@Model.SearchTerm" />
+                <button class="btn btn-primary" type="submit">Search</button>
+            </div>
+        </form>
+        @if (Model.SearchResults.Any())
+        {
+            <ul class="list-group">
+                @foreach (var pet in Model.SearchResults)
+                {
+                    <li class="list-group-item">
+                        <a href="@Url.Action("Details", "Pets", new { id = pet.PetId })">@pet.PetName</a> - Owner: @pet.PetOwner.Name
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Placeholder JS for charts
+        const ctxAppointments = document.getElementById('appointmentsChart').getContext('2d');
+        const appointmentsChart = new Chart(ctxAppointments, { type: 'bar', data: { labels: [], datasets: [{ label: 'Appointments', data: [] }] } });
+
+        const ctxTreatments = document.getElementById('treatmentsChart').getContext('2d');
+        const treatmentsChart = new Chart(ctxTreatments, { type: 'bar', data: { labels: [], datasets: [{ label: 'Treatments', data: [] }] } });
+
+        const ctxPrescription = document.getElementById('prescriptionChart').getContext('2d');
+        const prescriptionChart = new Chart(ctxPrescription, { type: 'line', data: { labels: [], datasets: [{ label: 'Prescriptions', data: [] }] } });
+    </script>
+}

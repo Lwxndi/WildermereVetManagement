@@ -1,0 +1,72 @@
+﻿@model IntergratedProject.Models.Notification
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Notification</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="NotificationId" />
+            <div class="form-group">
+                <label asp-for="Message" class="control-label"></label>
+                <input asp-for="Message" class="form-control" />
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SentAt" class="control-label"></label>
+                <input asp-for="SentAt" class="form-control" />
+                <span asp-validation-for="SentAt" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsRead" /> @Html.DisplayNameFor(model => model.IsRead)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="RecipientRole" class="control-label"></label>
+                <input asp-for="RecipientRole" class="form-control" />
+                <span asp-validation-for="RecipientRole" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PetOwnerId" class="control-label"></label>
+                <select asp-for="PetOwnerId" class="form-control" asp-items="ViewBag.PetOwnerId"></select>
+                <span asp-validation-for="PetOwnerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VeterinarianId" class="control-label"></label>
+                <select asp-for="VeterinarianId" class="form-control" asp-items="ViewBag.VeterinarianId"></select>
+                <span asp-validation-for="VeterinarianId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminId" class="control-label"></label>
+                <input asp-for="AdminId" class="form-control" />
+                <span asp-validation-for="AdminId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AppointmentId" class="control-label"></label>
+                <select asp-for="AppointmentId" class="form-control" asp-items="ViewBag.AppointmentId"></select>
+                <span asp-validation-for="AppointmentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MedicalRecordId" class="control-label"></label>
+                <select asp-for="MedicalRecordId" class="form-control" asp-items="ViewBag.MedicalRecordId"></select>
+                <span asp-validation-for="MedicalRecordId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

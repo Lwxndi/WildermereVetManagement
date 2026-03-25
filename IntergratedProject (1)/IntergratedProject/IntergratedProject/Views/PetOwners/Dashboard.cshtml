@@ -1,0 +1,236 @@
+﻿@model IntergratedProject.Models.PetOwner
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/dashboard.css" />
+<h1 class="mb-4 text-white">Welcome, @Model.Name!</h1>
+
+<!-- Top Summary Cards -->
+<div class="row mb-5 g-4">
+    <div class="col-md-3">
+        <div class="card text-center shadow-sm dashboard-card">
+            <div class="card-body">
+                <h6 class="text-muted">Total Pets</h6>
+                <h2 class="fw-bold">@(Model.Pets?.Count() ?? 0)</h2>
+                <div class="fs-3 text-primary">🐾</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center shadow-sm dashboard-card">
+            <div class="card-body">
+                <h6 class="text-muted">Upcoming Appointments</h6>
+                <h2 class="fw-bold">
+                    @(Model.Appointments?
+                        .Where(a => a.Date.Add(a.Time) >= DateTime.Now)
+                        .Count() ?? 0)
+                </h2>
+                <div class="fs-3 text-primary">📅</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center shadow-sm dashboard-card">
+            <div class="card-body">
+                <h6 class="text-muted">Last Visit</h6>
+                <h2 class="fw-bold">
+                    @(Model.Appointments?
+                        .Where(a => a.Date < DateTime.Now)
+                        .OrderByDescending(a => a.Date)
+                        .FirstOrDefault()?.Date.ToShortDateString() ?? "—")
+                </h2>
+                <div class="fs-3 text-primary">👨‍⚕️</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <a asp-controller="Appointments" asp-action="Create"
+           class="card text-center shadow-sm dashboard-card h-100 d-flex align-items-center justify-content-center text-decoration-none">
+            <div class="card-body">
+                <div class="fs-3 mb-2 text-primary">⭐</div>
+                <h6 class="fw-bold text-primary">Book New Appointment</h6>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Pets + Appointments Split -->
+<div class="row g-4">
+    <!-- My Companions -->
+    <div class="col-lg-6">
+        <div class="glass-container">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h3 class="fw-bold">My Companions</h3>
+                <a asp-controller="Pets" asp-action="Create" class="btn btn-primary rounded-pill">➕ Add New Pet</a>
+            </div>
+
+            @if (Model.Pets != null && Model.Pets.Any())
+            {
+                <div class="row">
+                    @foreach (var pet in Model.Pets)
+                    {
+                        <div class="col-12 mb-3">
+                            <div class="card shadow-sm border-0 overflow-hidden rounded-3">
+                                <div class="card-body d-flex align-items-center p-3">
+                                    <!-- Pet picture instead of emoji -->
+                                    <img src="~/images/@(string.IsNullOrEmpty(pet.ImageFileName) ? "default_pet.jpg" : pet.ImageFileName)"
+                                         alt="@pet.PetName"
+                                         class="rounded-circle me-3"
+                                         style="width: 60px; height: 60px; object-fit: cover;" />
+
+                                    <div class="flex-grow-1">
+                                        <h5 class="card-title fw-bold mb-0">@pet.PetName</h5>
+                                        <p class="card-text text-muted small mb-0">
+                                            @pet.Species?.Name • @pet.AgeYears yrs • @pet.Gender
+                                        </p>
+                                    </div>
+
+                                    <a asp-controller="Appointments" asp-action="Create" asp-route-petId="@pet.PetId"
+                                       class="btn btn-sm btn-primary ms-2 me-2">
+                                        Book
+                                    </a>
+                                    <a asp-controller="Pets" asp-action="Details" asp-route-id="@pet.PetId"
+                                       class="btn btn-sm btn-outline-secondary">
+                                        View
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="text-center p-5">
+                    <div class="fs-1 text-accent-orange mb-3">🐹</div>
+                    <p class="text-muted">You haven't registered any pets yet. Let's start their natural care journey!</p>
+                    <a asp-controller="Pets" asp-action="Create" class="btn btn-primary btn-lg mt-2">➕ Register Your First Pet</a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Upcoming Appointments -->
+    <div class="col-lg-6">
+        <div class="glass-container">
+            <h3 class="fw-bold mb-3">Upcoming Appointments</h3>
+            @if (Model.Appointments != null && Model.Appointments.Any(a => a.Date.Add(a.Time) >= DateTime.Now))
+            {
+                <ul class="list-group list-group-flush">
+                    @foreach (var appt in Model.Appointments
+                   .Where(a => a.Date.Add(a.Time) >= DateTime.Now)
+                   .OrderBy(a => a.Date).ThenBy(a => a.Time)
+                   .Take(5))
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center dashboard-card">
+                            <div class="d-flex flex-column">
+                                <strong>@appt.AppointmentType?.Name</strong>
+                                <span class="small text-muted">
+                                    @appt.Date.Add(appt.Time).ToString("dd MMM yyyy, HH:mm") for @appt.Pet?.PetName
+                                </span>
+                            </div>
+                            <span class="badge bg-primary rounded-pill">
+                                @appt.Veterinarian?.Name ?? "Unassigned"
+                            </span>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <div class="text-center p-5">
+                    <div class="fs-1 text-accent-orange mb-3">📅</div>
+                    <p class="text-muted">No upcoming appointments scheduled.</p>
+                    <a asp-controller="Appointments" asp-action="Create" class="btn btn-primary btn-lg mt-2">Book Appointment</a>
+                </div>
+            }
+        </div>
+    </div>
+
+    @* <!-- Medical Records --> *@
+    @* <div class="col-lg-4"> *@
+    @*     <div class="glass-container"> *@
+    @*         <h3 class="fw-bold mb-3">Recent Medical Records</h3> *@
+    @*         @if (Model.MedicalRecords != null && Model.MedicalRecords.Any()) *@
+    @*         { *@
+    @*             <ul class="list-group list-group-flush"> *@
+    @*                 @foreach (var record in Model.MedicalRecords *@
+    @*                .OrderByDescending(r => r.Date) *@
+    @*                .Take(5)) *@
+    @*                 { *@
+    @*                     <li class="list-group-item d-flex justify-content-between align-items-center dashboard-card"> *@
+    @*                         <div> *@
+    @*                             <strong>@record.Pet?.PetName</strong> - @record.RecordType *@
+    @*                             <div class="small text-muted">@record.Date.ToShortDateString()</div> *@
+    @*                         </div> *@
+    @*                         <a asp-controller="MedicalRecords" asp-action="Details" asp-route-id="@record.Id" class="btn btn-sm btn-outline-secondary"> *@
+    @*                             View *@
+    @*                         </a> *@
+    @*                     </li> *@
+    @*                 } *@
+    @*             </ul> *@
+    @*         } *@
+    @*         else *@
+    @*         { *@
+    @*             <div class="text-center p-5"> *@
+    @*                 <div class="fs-1 text-accent-orange mb-3">🩺</div> *@
+    @*                 <p class="text-muted">No medical records available.</p> *@
+    @*                 <a asp-controller="MedicalRecords" asp-action="Create" class="btn btn-primary btn-lg mt-2">Add Record</a> *@
+    @*             </div> *@
+    @*         } *@
+    @*     </div> *@
+    @* </div> *@
+
+</div>
+
+<!-- Chart Section -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="dashboard-card p-4">
+            <h3 class="fw-bold">Appointments Overview</h3>
+            <canvas id="appointmentsChart" height="100"></canvas>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('appointmentsChart');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+        @Html.Raw(string.Join(",", Model.Appointments?
+                     .Select(a => $"'{a.Date:MMM yyyy}'") ?? new List<string>()))
+                ],
+                datasets: [{
+                    label: 'Appointments',
+                    data: [
+        @Html.Raw(string.Join(",", Model.Appointments?
+                     .Select(a => "1") ?? new List<string>()))
+                    ],
+                    backgroundColor: '#007BFF'
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        precision: 0,
+                        ticks: { color: '#343A40' },
+                        grid: { color: 'rgba(52, 58, 64, 0.1)' }
+                    },
+                    x: {
+                        ticks: { color: '#343A40' },
+                        grid: { color: 'rgba(52, 58, 64, 0.1)' }
+                    }
+                }
+            }
+        });
+    </script>
+}

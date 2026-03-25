@@ -1,0 +1,57 @@
+﻿@model IEnumerable<IntergratedProject.Models.Appointment>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th><a href="#" class="sort" data-sort="Pet">Pet</a></th>
+            <th><a href="#" class="sort" data-sort="Owner">Owner</a></th>
+            <th><a href="#" class="sort" data-sort="Vet">Vet</a></th>
+            <th><a href="#" class="sort" data-sort="Type">Type</a></th>
+            <th><a href="#" class="sort" data-sort="Date">Date</a></th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="6" class="text-center">
+                    No appointments found. Try adjusting your filters.
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Create" class="btn btn-link">Create one?</a>
+                    }
+                </td>
+            </tr>
+        }
+        else
+        {
+            foreach (var a in Model)
+            {
+                var isToday = a.Date.Date == DateTime.Today;
+                <tr class="@(isToday ? "table-warning" : "")">
+                    <td>@a.Pet.PetName</td>
+                    <td>@a.PetOwner.Name</td>
+                    <td>@a.Veterinarian?.Name </td>
+                    <td>@a.AppointmentType.Name</td>
+                    <td>@a.Date.ToShortDateString()</td>
+                    <td>@a.Time.ToString(@"hh\:mm")</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@if (ViewBag.TotalPages != null && ViewBag.TotalPages > 1)
+{
+    <nav>
+        <ul class="pagination">
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a href="#" class="page-link page-btn" data-page="@i">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

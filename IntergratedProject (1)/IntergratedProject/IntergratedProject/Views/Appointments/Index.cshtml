@@ -1,0 +1,69 @@
+﻿@model IEnumerable<IntergratedProject.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Appointments";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Appointments</h1>
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="mb-3">
+        <a asp-action="Create" class="btn btn-primary">Create Appointment</a>
+        @* <a asp-action="ExportCsv" class="btn btn-success">Export CSV</a> *@
+        <button id="clearFilters" class="btn btn-secondary">Clear Filters</button>
+    </div>
+
+    <div class="filters mb-3 row g-2">
+        <div class="col"><input id="filterPetName" class="form-control" placeholder="Pet Name" /></div>
+        <div class="col"><input id="filterOwnerName" class="form-control" placeholder="Owner Name/Email" /></div>
+        <div class="col">
+            <select id="filterVetId" class="form-select">
+                <option value="">All Vets</option>
+                @foreach (var vet in ViewBag.Vets as List<IntergratedProject.Models.Veterinarian>)
+                {
+                    <option value="@vet.VeterinarianId">@vet.Name</option>
+                }
+            </select>
+        </div>
+        <div class="col">
+            <select id="filterTypeId" class="form-select">
+                <option value="">All Types</option>
+                @foreach (var type in ViewBag.AppointmentTypes as List<IntergratedProject.Models.AppointmentType>)
+                {
+                    <option value="@type.AppointmentTypeId">@type.Name</option>
+                }
+            </select>
+        </div>
+        <div class="col"><input type="date" id="filterStartDate" class="form-control" /></div>
+        <div class="col"><input type="date" id="filterEndDate" class="form-control" /></div>
+    </div>
+}
+else if (User.IsInRole("Veterinarian"))
+{
+    <div class="filters mb-3 row g-2">
+        <div class="col"><input type="date" id="filterStartDate" class="form-control" /></div>
+        <div class="col"><input type="date" id="filterEndDate" class="form-control" /></div>
+    </div>
+}
+else if (User.IsInRole("PetOwner"))
+{
+    <div class="filters mb-3 row g-2">
+        <div class="col"><input id="filterPetName" class="form-control" placeholder="Pet Name" /></div>
+        <div class="col"><input type="date" id="filterStartDate" class="form-control" /></div>
+        <div class="col"><input type="date" id="filterEndDate" class="form-control" /></div>
+    </div>
+}
+
+<div id="appointmentsTableContainer">
+    @await Html.PartialAsync("_AppointmentsTable", Model)
+</div>
+
+<div id="loadingSpinner" class="text-center" style="display:none;">
+    <p>Loading...</p>
+</div>
+
+@section Scripts {
+    <script src="~/js/appointments-filter.js"></script>
+}

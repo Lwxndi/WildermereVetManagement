@@ -1,0 +1,78 @@
+﻿@model IntergratedProject.ViewModels.MedicalRecordEditViewModel
+
+@{
+    ViewData["Title"] = "Edit Medical Record";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit Medical Record</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="PetId"></label>
+                <select asp-for="PetId" class="form-control" asp-items="Model.PetOptions"></select>
+                <span asp-validation-for="PetId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="VeterinarianId"></label>
+                <select asp-for="VeterinarianId" class="form-control" asp-items="Model.VeterinarianOptions"></select>
+                <span asp-validation-for="VeterinarianId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AppointmentId"></label>
+                <select asp-for="AppointmentId" class="form-control" asp-items="Model.AppointmentOptions"></select>
+                <span asp-validation-for="AppointmentId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Diagnosis"></label>
+                <input asp-for="Diagnosis" class="form-control" />
+                <span asp-validation-for="Diagnosis" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Treatment"></label>
+                <input asp-for="Treatment" class="form-control" />
+                <span asp-validation-for="Treatment" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Notes"></label>
+                <input asp-for="Notes" class="form-control" />
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Priority"></label>
+                <select asp-for="Priority" class="form-control">
+                    <option value="Low">Low</option>
+                    <option value="Normal">Normal</option>
+                    <option value="High">High</option>
+                    <option value="Emergency">Emergency</option>
+                </select>
+                <span asp-validation-for="Priority" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Upload New Files</label>
+                <input asp-for="UploadedFiles" type="file" multiple class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save Changes" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

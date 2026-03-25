@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+<link rel="stylesheet" href="~/css/Homepage.css" />
+<script src="~/js/homepage.js"></script>
+<section class="hero-section full-width">
+    <div class="hero-content">
+        <h1>Ready to Give Your Pet the Best Care?</h1>
+        <p>Join hundreds of satisfied pet owners who trust Wildemere Vet for their beloved companions' healthcare needs.</p>
+        <a asp-controller="Home" asp-action="Login" class="cta-button">
+            <i class="fas fa-calendar-alt"></i> Book Your First Appointment
+        </a>
+    </div>
+</section>
+
+<section class="animal-services-carousel">
+    <div class="container">
+        <div class="section-header">
+            <h2>We Care for All Your Pets</h2>
+            <p>From cats and dogs to exotic birds and small animals, our experienced team provides specialized care tailored to each species.</p>
+        </div>
+
+        <div class="carousel-container" style="position: relative;">
+            <!-- Left arrow -->
+            <button class="carousel-nav prev-btn" style="position: absolute; left: 0; top: 40%; z-index: 10; background: rgba(0,0,0,0.3); border: none; color: white; font-size: 2rem; width: 40px; height: 80px; cursor: pointer;">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <!-- Carousel Cards -->
+            <div class="carousel-cards" style="display: flex; overflow-x: auto; scroll-behavior: smooth; gap: 1rem; padding: 1rem 2rem;">
+                <div class="animal-card" style="min-width: 300px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; transition: transform 0.3s;">
+                    <img src="@Url.Content("~/images/cat2.jpg")" alt="Cat" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 1rem;">
+                        <h3>Cats</h3>
+                        <p class="service-tagline">Specialized feline healthcare and wellness</p>
+                        <h4>Our Services:</h4>
+                        <ul>
+                            <li>Spaying/Neutering</li>
+                            <li>Dental Care</li>
+                            <li>Behavioral Therapy</li>
+                            <li>Emergency Care</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="animal-card" style="min-width: 300px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; transition: transform 0.3s;">
+                    <img src="@Url.Content("~/images/perry.jpeg")" alt="Bird" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 1rem;">
+                        <h3>Birds</h3>
+                        <p class="service-tagline">Expert avian medicine and care</p>
+                        <h4>Our Services:</h4>
+                        <ul>
+                            <li>Wing Clipping</li>
+                            <li>Nutritional Guidance</li>
+                            <li>Disease Prevention</li>
+                            <li>Check-ups</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="animal-card" style="min-width: 300px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; transition: transform 0.3s;">
+                    <img src="@Url.Content("~/images/Hamster baby.jpeg")" alt="Rabbit" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 1rem;">
+                        <h3>Rabbits</h3>
+                        <p class="service-tagline">Gentle care for small furry friends</p>
+                        <h4>Our Services:</h4>
+                        <ul>
+                            <li>Exotic Pet Care</li>
+                            <li>Habitat Advice</li>
+                            <li>Emergency Treatment</li>
+                            <li>Wellness Exams</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="animal-card" style="min-width: 300px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; transition: transform 0.3s;">
+                    <img src="@Url.Content("~/images/hamster2.jpeg")" alt="Hamster" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 1rem;">
+                        <h3>Hamsters</h3>
+                        <p class="service-tagline">Tiny patients, big care</p>
+                        <h4>Our Services:</h4>
+                        <ul>
+                            <li>Habitat Setup</li>
+                            <li>Dental Checks</li>
+                            <li>Mini Wellness Exams</li>
+                            <li>Emergency Treatment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="animal-card" style="min-width: 300px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; transition: transform 0.3s;">
+                    <img src="@Url.Content("~/images/dog3.jpeg")" alt="Dog" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 1rem;">
+                        <h3>Dogs</h3>
+                        <p class="service-tagline">Comprehensive canine care</p>
+                        <h4>Our Services:</h4>
+                        <ul>
+                            <li>Vaccination</li>
+                            <li>Behavioral Training</li>
+                            <li>Surgical Care</li>
+                            <li>Nutrition Advice</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="animal-card" style="min-width: 300px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; transition: transform 0.3s;">
+                    <img src="@Url.Content("~/images/LEGEND.jpeg")" alt="Legendary Pet" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 1rem;">
+                        <h3>Legendary Pets</h3>
+                        <p class="service-tagline">For your extraordinary companions</p>
+                        <h4>Our Services:</h4>
+                        <ul>
+                            <li>Anxiety Treatment</li>
+                            <li>Advanced Diagnostics</li>
+                            <li>Behavior Consultations</li>
+                            <li>Wellness Planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right arrow -->
+            <button class="carousel-nav next-btn" style="position: absolute; right: 0; top: 40%; z-index: 10; background: rgba(0,0,0,0.3); border: none; color: white; font-size: 2rem; width: 40px; height: 80px; cursor: pointer;">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="features-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Why Choose Wildemere Vet?</h2>
+            <p>We combine cutting-edge veterinary technology with compassionate care to ensure the best outcomes for your pets.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-user-md"></i>
+                <h3>Expert Veterinarians</h3>
+                <p>Our team of experienced veterinarians provides comprehensive medical care with years of specialized training and genuine love for animals.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h3>24/7 Emergency Care</h3>
+                <p>Round-the-clock emergency services ensure your pet receives immediate attention when they need it most.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa
